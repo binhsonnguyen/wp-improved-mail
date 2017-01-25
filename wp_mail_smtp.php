@@ -139,7 +139,14 @@ function phpmailer_init_smtp($phpmailer) {
 		if (get_option('mailer') == "smtp") {
 
 			// Set the SMTPSecure value, if set to none, leave this blank
-			$phpmailer->SMTPSecure = get_option('smtp_ssl') == 'none' ? '' : get_option('smtp_ssl');
+            $smtp_ssl = get_option('smtp_ssl');
+			$phpmailer->SMTPSecure = ( $smtp_ssl == 'none' OR $smtp_ssl == 'disable' ) ? '' : $smtp_ssl;
+
+			// Turn off AutoTLS
+            // @see https://wordpress.org/support/topic/smtpautotls-overrides-smtpsecure-no-tlsssl-in-php-56/
+			if ( $smtp_ssl == 'disable' ) {
+			    $phpmailer->SMTPAutoTLS = FALSE;
+            }
 
 			// Set the other options
 			$phpmailer->Host = get_option('smtp_host');
@@ -307,12 +314,19 @@ function wp_mail_smtp_options_page() {
 <td>
   <fieldset>
     <legend class="screen-reader-text"><span><?php _e('Encryption', 'wp_mail_smtp'); ?></span></legend>
+
 <input id="smtp_ssl_none" type="radio" name="smtp_ssl" value="none" <?php checked('none', get_option('smtp_ssl')); ?> />
 <label for="smtp_ssl_none"><span><?php _e('No encryption.', 'wp_mail_smtp'); ?></span></label><br />
+
 <input id="smtp_ssl_ssl" type="radio" name="smtp_ssl" value="ssl" <?php checked('ssl', get_option('smtp_ssl')); ?> />
 <label for="smtp_ssl_ssl"><span><?php _e('Use SSL encryption.', 'wp_mail_smtp'); ?></span></label><br />
+
 <input id="smtp_ssl_tls" type="radio" name="smtp_ssl" value="tls" <?php checked('tls', get_option('smtp_ssl')); ?> />
-<label for="smtp_ssl_tls"><span><?php _e('Use TLS encryption.', 'wp_mail_smtp'); ?></span></label>
+<label for="smtp_ssl_tls"><span><?php _e('Use TLS encryption.', 'wp_mail_smtp'); ?></span></label><br />
+
+<input id="smtp_ssl_tls_disable" type="radio" name="smtp_ssl" value="disable" <?php checked('disable', get_option('smtp_ssl')); ?> />
+<label for="smtp_ssl_tls_disable"><span><?php _e('Disable', 'wp_mail_smtp'); ?></span></label>
+
 <p class="description"><?php esc_html_e('TLS is not the same as STARTTLS. For most servers SSL is the recommended option.'); ?></p>
 </td>
 </tr>
