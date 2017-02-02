@@ -324,8 +324,8 @@ function wp_mail_smtp_options_page() {
 <input id="smtp_ssl_tls" type="radio" name="smtp_ssl" value="tls" <?php checked('tls', get_option('smtp_ssl')); ?> />
 <label for="smtp_ssl_tls"><span><?php _e('Use TLS encryption.', 'wp_mail_smtp'); ?></span></label><br />
 
-<input id="smtp_ssl_tls_disable" type="radio" name="smtp_ssl" value="disable" <?php checked('disable', get_option('smtp_ssl')); ?> />
-<label for="smtp_ssl_tls_disable"><span><?php _e('Disable', 'wp_mail_smtp'); ?></span></label>
+<input id="smtp_ssl_disable" type="radio" name="smtp_ssl" value="disable" <?php checked('disable', get_option('smtp_ssl')); ?> />
+<label for="smtp_ssl_disable"><span><?php _e('Disable', 'wp_mail_smtp'); ?></span></label>
 
 <p class="description"><?php esc_html_e('TLS is not the same as STARTTLS. For most servers SSL is the recommended option.'); ?></p>
 </td>
