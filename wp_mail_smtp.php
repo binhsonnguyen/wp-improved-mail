@@ -2,10 +2,10 @@
 /*
 Plugin Name: WP-Mail-SMTP
 Version: 0.10.1
-Plugin URI: http://www.callum-macdonald.com/code/wp-mail-smtp/
+Plugin URI: https://github.com/binhsonnguyen/wp-mail-smtp
 Description: Reconfigures the wp_mail() function to use SMTP instead of mail() and creates an options page to manage the settings.
 Author: Callum Macdonald
-Author URI: http://www.callum-macdonald.com/
+Author URI: http://nguyenbinhson.com
 */
 
 /**
