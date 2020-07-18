@@ -4,7 +4,7 @@ Plugin Name: WP-Mail-SMTP
 Version: 0.10.1
 Plugin URI: https://github.com/binhsonnguyen/wp-mail-smtp
 Description: Reconfigures the wp_mail() function to use SMTP instead of mail() and creates an options page to manage the settings.
-Author: Callum Macdonald
+Author: Nguyen Binh Son
 Author URI: http://nguyenbinhson.com
 */
 
