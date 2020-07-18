@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: SMTP Mailer
+Plugin Name: Improved Mail
 Version: 0.10.1
-Plugin URI: https://github.com/binhsonnguyen/wp-smtp-mailer
+Plugin URI: https://github.com/binhsonnguyen/wp-improved-mail
 Description: Reconfigures the wp_mail() function to use SMTP instead of mail() # and creates an options page to manage the settings.
 Author: Nguyen Binh Son
 Author URI: http://nguyenbinhson.com
