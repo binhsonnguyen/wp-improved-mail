@@ -2,7 +2,7 @@
 /*
 Plugin Name: SMTP Mailer
 Version: 0.10.1
-Plugin URI: https://github.com/binhsonnguyen/wp-mail-smtp
+Plugin URI: https://github.com/binhsonnguyen/wp-smtp-mailer
 Description: Reconfigures the wp_mail() function to use SMTP instead of mail() # and creates an options page to manage the settings.
 Author: Nguyen Binh Son
 Author URI: http://nguyenbinhson.com
